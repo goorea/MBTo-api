@@ -4,6 +4,7 @@ import com.goorea.mbto.comment.Comment;
 import com.goorea.mbto.post.Post;
 import com.goorea.mbto.user.enums.Gender;
 import com.goorea.mbto.user.enums.MBTI;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Setter
 @Table(name = "users")
 public class User {
     @Id

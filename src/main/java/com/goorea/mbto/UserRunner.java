@@ -17,10 +17,11 @@ public class UserRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-//        User user = new User();
-//        user.setName("jiyaaany");
-//        user.setCreated(new Date());
-//
+        User user = new User();
+        user.setName("hyungseok");
+        user.setNickname("Sanae");
+        user.setCreated(new Date());
+
 //        userRepository.save(user);
     }
 }

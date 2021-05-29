@@ -1,0 +1,31 @@
+type User {
+    id: Int!
+    name: String!
+    nickname: String!
+    email: String!
+    password: String!
+    gender: String
+    token: String
+    MBTI: String!
+    avatar: String
+}
+
+input UserParam {
+    name: String!
+    nickname: String!
+    email: String!
+    password: String!
+    gender: String
+    token: String
+    MBTI: String!
+    avatar: String
+}
+
+type Query {
+    getUser(id: Int) : User
+    findAll: [User]
+}
+
+type Mutation {
+    putUser(userParam: UserParam) : Boolean
+}

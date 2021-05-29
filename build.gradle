@@ -17,9 +17,13 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testCompile 'com.h2database:h2'
+	implementation group: 'com.graphql-java', name: 'graphql-spring-boot-starter', version: '5.0.2'
+	implementation group: 'com.graphql-java', name: 'graphql-java-tools', version: '5.2.4'
+	implementation 'org.projectlombok:lombok:1.18.18'
+	annotationProcessor 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testCompile 'com.h2database:h2'
 	testCompile('org.spockframework:spock-core:1.1-groovy-2.4')
 	testCompile('org.spockframework:spock-spring:1.1-groovy-2.4')
 	testRuntimeOnly('org.junit.vintage:junit-vintage-engine')
