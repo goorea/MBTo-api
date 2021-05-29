@@ -4,6 +4,11 @@ import com.goorea.mbto.comment.Comment;
 import com.goorea.mbto.post.Post;
 import com.goorea.mbto.user.enums.Gender;
 import com.goorea.mbto.user.enums.MBTI;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,6 +16,9 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@DynamicUpdate
 @Table(name = "users")
 public class User {
     @Id
@@ -26,7 +34,7 @@ public class User {
     private String token;
 
     @Enumerated(EnumType.STRING)
-    private MBTI MBTI;
+    private MBTI mbti;
     private String avatar;
 
     @OneToMany(mappedBy = "user")
@@ -36,5 +44,7 @@ public class User {
     private final List<Comment> comments = new ArrayList<Comment>();
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Date created;
+    @Column(updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Generated(GenerationTime.INSERT)
+    private Date created_at;
 }

@@ -1,0 +1,9 @@
+type Mutation {
+    createUser(userParam: UserParam): Boolean
+    putUser(id: Int, userParam: UserParam): Boolean
+    delUser(id: Int): Boolean
+
+    createPost(postParam: PostParam, user_id: Int): Boolean
+    putPost(id: Int, postParam: PostParam): Boolean
+    delPost(id: Int): Boolean
+}

@@ -1,0 +1,10 @@
+type Post {
+    id: Int!
+    title: String!
+    contents: String
+}
+
+input PostParam {
+    title: String!
+    contents: String
+}

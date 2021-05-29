@@ -1,0 +1,46 @@
+enum Gender {
+    MALE,
+    FEMALE
+}
+
+enum MBTI {
+    ESTJ,
+    ESTP,
+    ESFJ,
+    ESFP,
+    ENTJ,
+    ENTP,
+    ENFJ,
+    ENFP,
+    ISTJ,
+    ISTP,
+    ISFJ,
+    ISFP,
+    INTJ,
+    INTP,
+    INFJ,
+    INFP
+}
+
+type User {
+    id: Int!
+    name: String!
+    nickname: String!
+    email: String!
+    password: String!
+    gender: Gender
+    token: String
+    mbti: MBTI!
+    avatar: String
+}
+
+input UserParam {
+    name: String!
+    nickname: String!
+    email: String!
+    password: String!
+    gender: Gender
+    token: String
+    mbti: MBTI!
+    avatar: String
+}
